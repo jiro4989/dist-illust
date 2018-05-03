@@ -5,11 +5,16 @@ README := target/README.md
 .PHONY: all
 all: dist/actor020.zip
 
-dist/actor020.zip: $(GEN_SCRIPT) $(shell find target/actor020 -type f | grep -E \.png$$) $(README) 
+.PHONY: release
+release: all
+	ghr `date +%Y%m%d-%H%M%S` dist/
+
+dist/actor020.zip: $(GEN_SCRIPT) $(shell find target/actor020 -type f | grep -E \.png$$) target/actor020/pattern.toml $(README) 
 	./$(GEN_SCRIPT) actor020
 
 .PHONY: setup
 setup:
+	chmod +x $(GEN_SCRIPT)
 	go get -u github.com/jiro4989/$(CMD)
 	go get -u github.com/tcnksm/ghr
 

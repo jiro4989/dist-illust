@@ -5,6 +5,9 @@ save_filename_format = "actor%03d.png"
 # 画像の組み合わせ
 # 一番上のファイルに順に重ねるように画像を貼り付けていく。
 pattern = [
+
+# 1P
+# ------------------------------------------------------------------------------
 # 通常
   [
     "target/actor020/diff/body/normal.png",
@@ -61,5 +64,6 @@ pattern = [
     "target/actor020/diff/eyebrows/normal.png",
     "target/actor020/diff/mouse/normal.png"
   ]
+
 ]
 
