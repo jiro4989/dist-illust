@@ -9,7 +9,9 @@ all: dist/actor020.zip
 release: all
 	ghr `date +%Y%m%d-%H%M%S` dist/
 
-dist/actor020.zip: $(GEN_SCRIPT) $(shell find target/actor020 -type f | grep -E \.png$$) target/actor020/pattern.toml $(README) 
+dist/actor020.zip: $(GEN_SCRIPT) \
+		$(shell find target/actor020/ -type f | grep -E "\.(png|toml)$$") \
+		$(README) 
 	./$(GEN_SCRIPT) actor020
 
 .PHONY: setup
