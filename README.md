@@ -18,6 +18,7 @@ dist-illust
 - 初回セットアップ: `make setup`
 - 生成 `make dist/actorXXX.zip`
 - 全部一気に生成 `make all`
+- GitHubReleaseにリリース `make release`
 
 成果物
 --------------------------------------------------------------------------------
