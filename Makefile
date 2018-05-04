@@ -20,6 +20,7 @@ setup:
 
 .PHONY: clean
 clean:
+	-rm -rf dist/*
 	-rm -rf tmp/
 
 .PHONY: clean-backupfiles
