@@ -62,7 +62,7 @@ function main() {
   : $CMD $ACTOR $TMP_DIR $pattern_type $panel_type $x $y $scale_size
 
   # パネルタイプごとの画像規格変数の取得
-  source ./script/param/$1.sh
+  source ./script/param/$panel_type.sh
   local -r paste_params=( -r $FACETILE_IMAGE_ROW -c $FACETILE_IMAGE_COL --width $FACETILE_IMAGE_WIDTH --height $FACETILE_IMAGE_HEIGHT )
   local -r pattern_dir=$TMP_DIR/$pattern_type
 

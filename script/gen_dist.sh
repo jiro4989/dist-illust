@@ -112,7 +112,8 @@ function main() {
           | sort \
           | while read -r f
             do
-              local i=$((i+1))
+              local i=${i:-0}
+              i=$((++i))
               local dist_dir="dist/$ACTOR/face/$panel_type/$direction"
 
               local num=`printf '%03d' $pattern_index`_`printf '%03d' $i`
@@ -128,7 +129,8 @@ function main() {
       | sort \
       | while read -r f
         do
-          local i=$((i+1))
+          local i=${i:-0}
+          i=$((++i))
           local dist_dir=dist/$ACTOR/stand/$direction
 
           local num=`printf '%03d' $pattern_index`_`printf '%03d' $i`
