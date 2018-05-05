@@ -13,7 +13,7 @@ release: all
 dist/actor020.zip: $(SRCS) \
 		$(shell find target/actor020/ -type f | grep -E "\.(png|toml)$$") \
 		$(README) 
-	./$(GEN_SCRIPT) -a actor020 -x 92 -y 240 --scale-mv 44 --scale-vxace 30
+	./$(GEN_SCRIPT) -a actor020 -x 92 -y 240 --scale-mv 44 --scale-vxace 30 1>/dev/null
 
 .PHONY: setup
 setup:

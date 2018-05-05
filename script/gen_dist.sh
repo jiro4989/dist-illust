@@ -88,7 +88,7 @@ function main() {
     $GEN_SCRIPT \
       --pattern-type $ptn_type \
       --panel-type rpg_maker_vxace \
-      --scale-size $scale_mv \
+      --scale-size $scale_vxace \
       -x $tmp_x \
       -y $tmp_y
 
