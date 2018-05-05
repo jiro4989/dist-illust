@@ -53,6 +53,9 @@ clean-backupfiles:
 .PHONY: dir
 dir:
 	if [ "$(DIRNAME)" = "" ]; then echo Require variable DIRNAME; exit 1; fi
-	cp -r target/actor020 target/"$(DIRNAME)"
-	find target/"$(DIRNAME)" -type f | grep -v .toml | xargs rm
+	$(eval target_dir := target/$(DIRNAME))
+	if [ -e "$(target_dir)" ]; then echo $(target_dir) has existed. Please delete one.; exit 1; fi
+	cp -r target/actor020 "$(target_dir)"
+	find "$(target_dir)" -type f | grep -v .toml | xargs rm
+	sed -i 's@actor020@'"$(DIRNAME)"'@g' "$(target_dir)"/pattern/*.toml
 
