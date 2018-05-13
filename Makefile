@@ -31,7 +31,7 @@ dist/actor020.zip: $(SRCS) \
 dist/actor024.zip: $(SRCS) \
 		$(shell find target/actor024/ -type f | grep -E "\.(png|toml)$$") \
 		$(README) 
-	./$(GEN_SCRIPT) -a actor024 -x 75 -y 184 --scale-mv 42 --scale-vxace 30 1>/dev/null
+	./$(GEN_SCRIPT) -a actor024 -x 73 -y 195 --scale-mv 44 --scale-vxace 30 1>/dev/null
 
 # 環境整備
 # ------------------------------------------------------------------------------
@@ -63,6 +63,11 @@ dir:
 	cp -r target/actor020 "$(target_dir)"
 	find "$(target_dir)" -type f | grep -v .toml | xargs rm
 	sed -i 's@actor020@'"$(DIRNAME)"'@g' "$(target_dir)"/pattern/*.toml
+
+# 指定アクターの画像を全部開く
+open:
+	if [ "$(INDEX)" = "" ]; then echo Require variable INDEX; exit 1; fi
+	find dist/actor$(INDEX)/face/*/left/* -type f | xargs eog
 
 # dist配下の成果物の画像ファイルを全部開く
 .PHONY: open-all
