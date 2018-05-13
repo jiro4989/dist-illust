@@ -64,3 +64,8 @@ dir:
 	find "$(target_dir)" -type f | grep -v .toml | xargs rm
 	sed -i 's@actor020@'"$(DIRNAME)"'@g' "$(target_dir)"/pattern/*.toml
 
+# dist配下の成果物の画像ファイルを全部開く
+.PHONY: open-all
+open-all: all
+	find dist/ -type f | grep .*face.*mv.*left.*001_001.png | xargs eog
+
