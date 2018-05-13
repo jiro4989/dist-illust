@@ -8,7 +8,7 @@ README := target/README.md
 
 # 配布物zipを全部作成
 .PHONY: all
-all: dist/actor019.zip dist/actor020.zip
+all: dist/actor019.zip dist/actor020.zip dist/actor024.zip
 
 # GitHubReleaseにリリース
 .PHONY: release
@@ -27,6 +27,11 @@ dist/actor020.zip: $(SRCS) \
 		$(shell find target/actor020/ -type f | grep -E "\.(png|toml)$$") \
 		$(README) 
 	./$(GEN_SCRIPT) -a actor020 -x 92 -y 240 --scale-mv 44 --scale-vxace 30 1>/dev/null
+
+dist/actor024.zip: $(SRCS) \
+		$(shell find target/actor024/ -type f | grep -E "\.(png|toml)$$") \
+		$(README) 
+	./$(GEN_SCRIPT) -a actor024 -x 75 -y 184 --scale-mv 42 --scale-vxace 30 1>/dev/null
 
 # 環境整備
 # ------------------------------------------------------------------------------
