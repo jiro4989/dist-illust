@@ -8,7 +8,7 @@ README := target/README.md
 
 # 配布物zipを全部作成
 .PHONY: all
-all: dist/actor019.zip dist/actor020.zip dist/actor024.zip
+all: dist/actor020.zip dist/actor023.zip dist/actor024.zip
 
 # GitHubReleaseにリリース
 .PHONY: release
@@ -18,15 +18,19 @@ release: all
 # 配布物作成
 # ------------------------------------------------------------------------------
 
-dist/actor019.zip: $(SRCS) \
-		$(shell find target/actor019/ -type f | grep -E "\.(png|toml)$$") \
-		$(README) 
-	./$(GEN_SCRIPT) -a actor019 -x 62 -y 230 --scale-mv 50 --scale-vxace 30 1>/dev/null
+.PHONY: dist/actor001_019.zip
+dist/actor001_019.zip:
+	for i in `seq 19`; do ./script/zip_gened.sh actor`printf '%03d' $$i`; done 1>/dev/null
 
 dist/actor020.zip: $(SRCS) \
 		$(shell find target/actor020/ -type f | grep -E "\.(png|toml)$$") \
 		$(README) 
 	./$(GEN_SCRIPT) -a actor020 -x 92 -y 240 --scale-mv 44 --scale-vxace 30 1>/dev/null
+
+dist/actor023.zip: $(SRCS) \
+		$(shell find target/actor023/ -type f | grep -E "\.(png|toml)$$") \
+		$(README) 
+	./$(GEN_SCRIPT) -a actor023 -x 62 -y 230 --scale-mv 50 --scale-vxace 30 1>/dev/null
 
 dist/actor024.zip: $(SRCS) \
 		$(shell find target/actor024/ -type f | grep -E "\.(png|toml)$$") \
