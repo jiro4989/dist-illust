@@ -20,7 +20,8 @@ release: all
 
 .PHONY: dist/actor001_019.zip
 dist/actor001_019.zip:
-	for i in `seq 19`; do ./script/zip_gened.sh actor`printf '%03d' $$i`; done 1>/dev/null
+	./script/gen_tmp_with_no_diff.sh -a actor001 -x 57 -y 100 --scale-size 65 --panel-type rpg_maker_mv
+	#for i in `seq 19`; do ./script/zip_gened.sh actor`printf '%03d' $$i`; done 1>/dev/null
 
 dist/actor020.zip: $(SRCS) \
 		$(shell find target/actor020/ -type f | grep -E "\.(png|toml)$$") \
