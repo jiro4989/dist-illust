@@ -48,7 +48,7 @@ dist/actor024.zip: $(SRCS) \
 		$(shell find target/actor024/ -type f | grep -E "\.(png|toml)$$") \
 		Makefile \
 		$(README) 
-	./$(GEN_SCRIPT) -a actor024 -x 73 -y 195 --scale-mv 44 --scale-vxace 30 1>/dev/null
+	./$(GEN_SCRIPT) -a actor024 -x 73 -y 215 --scale-mv 44 --scale-vxace 30 1>/dev/null
 
 # 環境整備
 # ------------------------------------------------------------------------------
