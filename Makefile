@@ -1,7 +1,7 @@
 CMD := tkimgutil
 GEN_SCRIPT := script/gen_dist.sh
 SRCS := $(shell find script -type f | grep .sh)
-README := target/README.md
+README := target/README.html
 
 # リリース
 # ------------------------------------------------------------------------------

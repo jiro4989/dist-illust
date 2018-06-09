@@ -99,7 +99,7 @@ function main() {
 
     # 中間ファイルのうち必要なもののみコピーしてzip圧縮
     mkdir -p dist/$ACTOR
-    cp target/README.md dist/$ACTOR/README.txt
+    cp target/README.html dist/$ACTOR/
 
     for direction in left right
     do
