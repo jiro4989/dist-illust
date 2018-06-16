@@ -7,7 +7,7 @@ function main() {
   : $ACTOR
 
   cp -r target/$ACTOR/ dist/
-  cp target/README.md dist/$ACTOR/README.txt
+  cp target/README.html dist/$ACTOR/
   ( cd dist/ && zip -r $ACTOR.zip $ACTOR/ )
 }
 

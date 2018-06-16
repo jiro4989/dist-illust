@@ -2,13 +2,15 @@ CMD := tkimgutil
 GEN_SCRIPT := script/gen_dist.sh
 SRCS := $(shell find script -type f | grep .sh)
 README := target/README.html
+STAND_IMAGES := $(shell find dist/ -name *r_stand_001_001.png)
 
 # リリース
 # ------------------------------------------------------------------------------
 
 # 配布物zipを全部作成
 .PHONY: all
-all: dist/actor020.zip \
+all: dist/actor001_019.zip \
+	dist/actor020.zip \
 	dist/actor021.zip \
 	dist/actor023.zip \
 	dist/actor024.zip
@@ -18,13 +20,17 @@ all: dist/actor020.zip \
 release: all
 	ghr `date +%Y%m%d-%H%M%S` dist/
 
+# イラスト一覧ページのMarkdownを生成する
+index.html: script/gen_illustpage.sh $(STAND_IMAGES)
+	bash script/gen_illustpage.sh > $@
+
 # 配布物作成
 # ------------------------------------------------------------------------------
 
 .PHONY: dist/actor001_019.zip
 dist/actor001_019.zip:
-	./script/gen_tmp_with_no_diff.sh -a actor001 -x 57 -y 100 --scale-size 65 --panel-type rpg_maker_mv
-	#for i in `seq 19`; do ./script/zip_gened.sh actor`printf '%03d' $$i`; done 1>/dev/null
+	#./script/gen_tmp_with_no_diff.sh -a actor001 -x 57 -y 100 --scale-size 65 --panel-type rpg_maker_mv
+	for i in `seq 19`; do ./script/zip_gened.sh actor`printf '%03d' $$i`; done 1>/dev/null
 
 dist/actor020.zip: $(SRCS) \
 		$(shell find target/actor020/ -type f | grep -E "\.(png|toml)$$") \
@@ -90,4 +96,9 @@ open:
 .PHONY: open-all
 open-all:
 	find dist/ -type f | grep .*face.*mv.*left.*001_001.png | xargs eog
+
+# dist配下の成果物の画像ファイルを全部開く
+.PHONY: open-stand
+open-stand:
+	find dist/ -type f | grep l_stand_001_001.png | xargs eog
 
