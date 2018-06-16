@@ -20,6 +20,16 @@ all: dist/actor001_019.zip \
 release: all
 	ghr `date +%Y%m%d-%H%M%S` dist/
 
+.PHONY: update-gh-pages
+update-gh-pages: index.html
+	-git add index.html
+	-git commit -m "update index.html"
+	-git push origin master
+	-git checkout gh-pages
+	-git merge master
+	-git push origin gh-pages
+	git checkout master
+
 # イラスト一覧ページのMarkdownを生成する
 index.html: script/gen_illustpage.sh $(STAND_IMAGES)
 	bash script/gen_illustpage.sh > $@
