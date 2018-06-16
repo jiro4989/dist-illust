@@ -20,6 +20,10 @@ all: dist/actor001_019.zip \
 release: all
 	ghr `date +%Y%m%d-%H%M%S` dist/
 
+# 初期化して全部作成し直してリリースしてgh-pagesも更新する
+.PHONY: release-all
+release-all: clean all release update-gh-pages
+
 .PHONY: update-gh-pages
 update-gh-pages: index.html
 	-git add index.html
