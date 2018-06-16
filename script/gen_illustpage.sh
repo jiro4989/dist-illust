@@ -2,9 +2,12 @@
 
 set -eu
 
+find dist/ -name *r_stand_001_001.png -exec cp {} img/stand/ \;
+find dist/ -name *face_001_001.png | grep -v -e vxace -e _l_ | xargs cp -t img/face/
+
 paste -d " " \
-    <(find dist/ -name *r_stand_001_001.png | sort) \
-    <(find dist/ -name *face_001_001.png | grep -v -e vxace -e _l_ | sort) \
+    <(find img/stand/ -type f | sort) \
+    <(find img/face/ -type f | sort) \
   | sed -r \
     -e 's@([^ ]+) (.*)$@<div class="actor-block"><div><img src="\1" height="400"></div><div><img src="\2"></div></div>@g' \
     -e 's@(src="dist/)(actor[0-9]+)(/stand.*</div>)(</div>)$@\1\2\3<label>\2</label>\4@g' \
