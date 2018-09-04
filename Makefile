@@ -12,6 +12,7 @@ STAND_IMAGES := $(shell find dist/ -name *r_stand_001_001.png)
 all: dist/actor001_019.zip \
 	dist/actor020.zip \
 	dist/actor021.zip \
+	dist/actor022.zip \
 	dist/actor023.zip \
 	dist/actor024.zip
 
@@ -57,6 +58,12 @@ dist/actor021.zip: $(SRCS) \
 		Makefile \
 		$(README) 
 	./$(GEN_SCRIPT) -a actor021 -x 32 -y 220 --scale-mv 44 --scale-vxace 30 1>/dev/null
+
+dist/actor022.zip: $(SRCS) \
+		$(shell find target/actor022/ -type f | grep -E "\.(png|toml)$$") \
+		Makefile \
+		$(README) 
+	./$(GEN_SCRIPT) -a actor022 -x 80 -y 125 --scale-mv 44 --scale-vxace 30 1>/dev/null
 
 dist/actor023.zip: $(SRCS) \
 		$(shell find target/actor023/ -type f | grep -E "\.(png|toml)$$") \
