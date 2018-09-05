@@ -14,7 +14,9 @@ all: dist/actor001_019.zip \
 	dist/actor021.zip \
 	dist/actor022.zip \
 	dist/actor023.zip \
-	dist/actor024.zip
+	dist/actor024.zip \
+	dist/actor025.zip \
+	dist/actor026.zip
 
 # GitHubReleaseにリリース
 .PHONY: release
@@ -76,6 +78,12 @@ dist/actor024.zip: $(SRCS) \
 		Makefile \
 		$(README) 
 	./$(GEN_SCRIPT) -a actor024 -x 73 -y 215 --scale-mv 44 --scale-vxace 30 1>/dev/null
+
+dist/actor025.zip:
+	./script/zip_gened.sh actor`printf '%03d' 25` 1>/dev/null
+
+dist/actor026.zip:
+	./script/zip_gened.sh actor`printf '%03d' 26` 1>/dev/null
 
 # 環境整備
 # ------------------------------------------------------------------------------
