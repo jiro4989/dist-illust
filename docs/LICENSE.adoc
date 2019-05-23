@@ -1,9 +1,4 @@
 = 利用規約
-// 作者情報
-:author: 次郎 (jiro)
-:revnumber: 1.1
-:revdate: {docdate}
-:homepage: https://jiroron666.hatenablog.com/archive
 // ドキュメント情報
 :lang: ja
 :toc: left
@@ -15,6 +10,19 @@
 
 本ドキュメントは配布のイラストの利用規約について記載してあります。
 お手数おかけいたしますが、ご一読のほどよろしくお願いいたします。
+
+== 作者情報
+
+.作者情報
+[options="header"]
+|=============================================================
+|名前      |次郎 (jiro)
+|規約作成日|2016/01/24
+|規約更新日|2019/05/23
+|版        |1.2
+|Twitter   |https://twitter.com/jiro_saburomaru[@jiro_saburomaru]
+|ブログ    |https://jiroron666.hatenablog.com/archive[次ログ]
+|=============================================================
 
 == 規約内容
 
