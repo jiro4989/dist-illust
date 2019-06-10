@@ -1,6 +1,6 @@
 {
   "generate":{
-    "outDir":"dist/actor027/generate",
+    "outDir":"tmp/actor027/generate",
     "outFileNameFormat":"%03d.png",
     "srcPatterns":[
       [
@@ -144,21 +144,21 @@
     ]
   },
   "flip":{
-    "outDir":"dist/actor027/flip"
+    "outDir":"tmp/actor027/flip"
   },
   "scale":{
-    "outDir":"dist/actor027/scale",
+    "outDir":"tmp/actor027/scale",
     "size":50
   },
   "crop":{
-    "outDir":"dist/actor027/crop",
+    "outDir":"tmp/actor027/crop",
     "x":125,
     "y":215,
     "width":144,
     "height":144
   },
   "paste":{
-    "outDir":"dist/actor027/paste",
+    "outDir":"tmp/actor027/face/rpg_maker_mv",
     "outFileNameFormat":"%03d.png",
     "row":2,
     "col":4,
