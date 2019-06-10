@@ -16,7 +16,8 @@ all: dist/actor001_019.zip \
 	dist/actor023.zip \
 	dist/actor024.zip \
 	dist/actor025.zip \
-	dist/actor026.zip
+	dist/actor026.zip \
+	dist/actor027.zip 
 
 # GitHubReleaseにリリース
 .PHONY: release
@@ -84,6 +85,12 @@ dist/actor025.zip:
 
 dist/actor026.zip:
 	./script/zip_gened.sh actor`printf '%03d' 26` 1>/dev/null
+
+dist/actor027.zip: $(SRCS) \
+		$(shell find target/actor022/ -type f | grep -E "\.(png|toml)$$") \
+		Makefile \
+		$(README) 
+	./$(GEN_SCRIPT) -a actor027 -x 125 -y 215 --scale-mv 50 --scale-vxace 36 1>/dev/null
 
 # 環境整備
 # ------------------------------------------------------------------------------

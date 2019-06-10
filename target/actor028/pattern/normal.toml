@@ -10,155 +10,155 @@ pattern = [
 # ------------------------------------------------------------------------------
 # 通常
   [
-    "target/actor028/diff/body/normal.png",
-    "target/actor028/diff/eye/normal.png",
-    "target/actor028/diff/eyebrows/normal.png",
-    "target/actor028/diff/mouse/normal.png"
+    "target/actor027/diff/body/normal.png",
+    "target/actor027/diff/eye/normal.png",
+    "target/actor027/diff/eyebrows/normal.png",
+    "target/actor027/diff/mouse/normal.png"
   ],
 # 会話
   [
-    "target/actor028/diff/body/normal.png",
-    "target/actor028/diff/eye/normal.png",
-    "target/actor028/diff/eyebrows/normal.png",
-    "target/actor028/diff/mouse/smile.png"
+    "target/actor027/diff/body/normal.png",
+    "target/actor027/diff/eye/normal.png",
+    "target/actor027/diff/eyebrows/normal.png",
+    "target/actor027/diff/mouse/smile.png"
   ],
 # 驚き
   [
-    "target/actor028/diff/body/normal.png",
-    "target/actor028/diff/eye/surprise.png",
-    "target/actor028/diff/eyebrows/normal.png",
-    "target/actor028/diff/mouse/talk.png"
+    "target/actor027/diff/body/normal.png",
+    "target/actor027/diff/eye/surprise.png",
+    "target/actor027/diff/eyebrows/normal.png",
+    "target/actor027/diff/mouse/talk.png"
   ],
 # 無表情
   [
-    "target/actor028/diff/body/normal.png",
-    "target/actor028/diff/eye/normal.png",
-    "target/actor028/diff/eyebrows/normal.png",
-    "target/actor028/diff/mouse/nan.png"
+    "target/actor027/diff/body/normal.png",
+    "target/actor027/diff/eye/normal.png",
+    "target/actor027/diff/eyebrows/normal.png",
+    "target/actor027/diff/mouse/nan.png"
   ],
 # 喜
   [
-    "target/actor028/diff/body/normal.png",
-    "target/actor028/diff/eye/smile.png",
-    "target/actor028/diff/eyebrows/normal.png",
-    "target/actor028/diff/mouse/smile.png"
+    "target/actor027/diff/body/normal.png",
+    "target/actor027/diff/eye/smile.png",
+    "target/actor027/diff/eyebrows/normal.png",
+    "target/actor027/diff/mouse/smile.png"
   ],
 # 怒
   [
-    "target/actor028/diff/body/normal.png",
-    "target/actor028/diff/eye/normal.png",
-    "target/actor028/diff/eyebrows/angry.png",
-    "target/actor028/diff/mouse/shout.png"
+    "target/actor027/diff/body/normal.png",
+    "target/actor027/diff/eye/normal.png",
+    "target/actor027/diff/eyebrows/angry.png",
+    "target/actor027/diff/mouse/shout.png"
   ],
 # 哀
   [
-    "target/actor028/diff/body/normal.png",
-    "target/actor028/diff/eye/normal.png",
-    "target/actor028/diff/eyebrows/sad.png",
-    "target/actor028/diff/mouse/talk.png"
+    "target/actor027/diff/body/normal.png",
+    "target/actor027/diff/eye/normal.png",
+    "target/actor027/diff/eyebrows/sad.png",
+    "target/actor027/diff/mouse/talk.png"
   ],
 # 楽
   [
-    "target/actor028/diff/body/normal.png",
-    "target/actor028/diff/eye/smile.png",
-    "target/actor028/diff/eyebrows/normal.png",
-    "target/actor028/diff/mouse/normal.png"
+    "target/actor027/diff/body/normal.png",
+    "target/actor027/diff/eye/smile.png",
+    "target/actor027/diff/eyebrows/normal.png",
+    "target/actor027/diff/mouse/normal.png"
   ],
 
 # 2P
 # ------------------------------------------------------------------------------
   [
-    "target/actor028/diff/body/normal.png",
-    "target/actor028/diff/eye/close.png",
-    "target/actor028/diff/eyebrows/normal.png",
-    "target/actor028/diff/mouse/normal.png"
+    "target/actor027/diff/body/normal.png",
+    "target/actor027/diff/eye/close.png",
+    "target/actor027/diff/eyebrows/normal.png",
+    "target/actor027/diff/mouse/normal.png"
   ],
   [
-    "target/actor028/diff/body/normal.png",
-    "target/actor028/diff/eye/close.png",
-    "target/actor028/diff/eyebrows/normal.png",
-    "target/actor028/diff/mouse/smile.png"
+    "target/actor027/diff/body/normal.png",
+    "target/actor027/diff/eye/close.png",
+    "target/actor027/diff/eyebrows/normal.png",
+    "target/actor027/diff/mouse/smile.png"
   ],
   [
-    "target/actor028/diff/body/normal.png",
-    "target/actor028/diff/eye/close.png",
-    "target/actor028/diff/eyebrows/normal.png",
-    "target/actor028/diff/mouse/talk.png"
+    "target/actor027/diff/body/normal.png",
+    "target/actor027/diff/eye/close.png",
+    "target/actor027/diff/eyebrows/normal.png",
+    "target/actor027/diff/mouse/talk.png"
   ],
   [
-    "target/actor028/diff/body/normal.png",
-    "target/actor028/diff/eye/close.png",
-    "target/actor028/diff/eyebrows/normal.png",
-    "target/actor028/diff/mouse/nan.png"
+    "target/actor027/diff/body/normal.png",
+    "target/actor027/diff/eye/close.png",
+    "target/actor027/diff/eyebrows/normal.png",
+    "target/actor027/diff/mouse/nan.png"
   ],
   [
-    "target/actor028/diff/body/normal.png",
-    "target/actor028/diff/eye/close.png",
-    "target/actor028/diff/eyebrows/normal.png",
-    "target/actor028/diff/mouse/shout.png"
+    "target/actor027/diff/body/normal.png",
+    "target/actor027/diff/eye/close.png",
+    "target/actor027/diff/eyebrows/normal.png",
+    "target/actor027/diff/mouse/shout.png"
   ],
   [
-    "target/actor028/diff/body/normal.png",
-    "target/actor028/diff/eye/jito.png",
-    "target/actor028/diff/eyebrows/normal.png",
-    "target/actor028/diff/mouse/normal.png"
+    "target/actor027/diff/body/normal.png",
+    "target/actor027/diff/eye/jito.png",
+    "target/actor027/diff/eyebrows/normal.png",
+    "target/actor027/diff/mouse/normal.png"
   ],
   [
-    "target/actor028/diff/body/normal.png",
-    "target/actor028/diff/eye/jito.png",
-    "target/actor028/diff/eyebrows/normal.png",
-    "target/actor028/diff/mouse/smile.png"
+    "target/actor027/diff/body/normal.png",
+    "target/actor027/diff/eye/jito.png",
+    "target/actor027/diff/eyebrows/normal.png",
+    "target/actor027/diff/mouse/smile.png"
   ],
   [
-    "target/actor028/diff/body/normal.png",
-    "target/actor028/diff/eye/jito.png",
-    "target/actor028/diff/eyebrows/normal.png",
-    "target/actor028/diff/mouse/talk.png"
+    "target/actor027/diff/body/normal.png",
+    "target/actor027/diff/eye/jito.png",
+    "target/actor027/diff/eyebrows/normal.png",
+    "target/actor027/diff/mouse/talk.png"
   ],
 
 # 3P
 # ------------------------------------------------------------------------------
   [
-    "target/actor028/diff/body/normal.png",
-    "target/actor028/diff/eye/jito.png",
-    "target/actor028/diff/eyebrows/normal.png",
-    "target/actor028/diff/mouse/nan.png"
+    "target/actor027/diff/body/normal.png",
+    "target/actor027/diff/eye/jito.png",
+    "target/actor027/diff/eyebrows/normal.png",
+    "target/actor027/diff/mouse/nan.png"
   ],
   [
-    "target/actor028/diff/body/normal.png",
-    "target/actor028/diff/eye/jito.png",
-    "target/actor028/diff/eyebrows/normal.png",
-    "target/actor028/diff/mouse/shout.png"
+    "target/actor027/diff/body/normal.png",
+    "target/actor027/diff/eye/jito.png",
+    "target/actor027/diff/eyebrows/normal.png",
+    "target/actor027/diff/mouse/shout.png"
   ],
   [
-    "target/actor028/diff/body/normal.png",
-    "target/actor028/diff/eye/jito.png",
-    "target/actor028/diff/eyebrows/angry.png",
-    "target/actor028/diff/mouse/normal.png"
+    "target/actor027/diff/body/normal.png",
+    "target/actor027/diff/eye/jito.png",
+    "target/actor027/diff/eyebrows/angry.png",
+    "target/actor027/diff/mouse/normal.png"
   ],
   [
-    "target/actor028/diff/body/normal.png",
-    "target/actor028/diff/eye/jito.png",
-    "target/actor028/diff/eyebrows/angry.png",
-    "target/actor028/diff/mouse/smile.png"
+    "target/actor027/diff/body/normal.png",
+    "target/actor027/diff/eye/jito.png",
+    "target/actor027/diff/eyebrows/angry.png",
+    "target/actor027/diff/mouse/smile.png"
   ],
   [
-    "target/actor028/diff/body/normal.png",
-    "target/actor028/diff/eye/jito.png",
-    "target/actor028/diff/eyebrows/angry.png",
-    "target/actor028/diff/mouse/talk.png"
+    "target/actor027/diff/body/normal.png",
+    "target/actor027/diff/eye/jito.png",
+    "target/actor027/diff/eyebrows/angry.png",
+    "target/actor027/diff/mouse/talk.png"
   ],
   [
-    "target/actor028/diff/body/normal.png",
-    "target/actor028/diff/eye/jito.png",
-    "target/actor028/diff/eyebrows/angry.png",
-    "target/actor028/diff/mouse/nan.png"
+    "target/actor027/diff/body/normal.png",
+    "target/actor027/diff/eye/jito.png",
+    "target/actor027/diff/eyebrows/angry.png",
+    "target/actor027/diff/mouse/nan.png"
   ],
   [
-    "target/actor028/diff/body/normal.png",
-    "target/actor028/diff/eye/jito.png",
-    "target/actor028/diff/eyebrows/angry.png",
-    "target/actor028/diff/mouse/shout.png"
+    "target/actor027/diff/body/normal.png",
+    "target/actor027/diff/eye/jito.png",
+    "target/actor027/diff/eyebrows/angry.png",
+    "target/actor027/diff/mouse/shout.png"
   ]
 
 ]
