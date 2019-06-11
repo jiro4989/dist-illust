@@ -19,16 +19,6 @@ all: \
 release: all
 	ghr `date +%Y%m%d-%H%M%S` dist/
 
-.PHONY: update-gh-pages
-update-gh-pages: index.html
-	-git add index.html
-	-git commit -m "update index.html"
-	-git push origin master
-	-git checkout gh-pages
-	-git merge master
-	-git push origin gh-pages
-	git checkout master
-
 # 配布物作成
 # ------------------------------------------------------------------------------
 
@@ -86,29 +76,4 @@ clean:
 .PHONY: clean-backupfiles
 clean-backupfiles:
 	find target/ -type f | grep png~ | xargs rm
-
-# テンプレートディレクトリ構造の作成
-.PHONY: dir
-dir:
-	if [ "$(DIRNAME)" = "" ]; then echo Require variable DIRNAME; exit 1; fi
-	$(eval target_dir := target/$(DIRNAME))
-	if [ -e "$(target_dir)" ]; then echo $(target_dir) has existed. Please delete one.; exit 1; fi
-	cp -r target/actor020 "$(target_dir)"
-	find "$(target_dir)" -type f | grep -v .toml | xargs rm
-	sed -i 's@actor020@'"$(DIRNAME)"'@g' "$(target_dir)"/pattern/*.toml
-
-# 指定アクターの画像を全部開く
-open:
-	if [ "$(INDEX)" = "" ]; then echo Require variable INDEX; exit 1; fi
-	find dist/actor$(INDEX)/face/*/left/* -type f | xargs eog
-
-# dist配下の成果物の画像ファイルを全部開く
-.PHONY: open-all
-open-all:
-	find dist/ -type f | grep .*face.*mv.*left.*001_001.png | xargs eog
-
-# dist配下の成果物の画像ファイルを全部開く
-.PHONY: open-stand
-open-stand:
-	find dist/ -type f | grep l_stand_001_001.png | xargs eog
 
