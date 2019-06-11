@@ -1,4 +1,6 @@
 {
+  "srcDir":"left",
+  "flipDir":"right",
   "generate":{
     "outDir":"tmp/actor027/generate/x96",
     "outFileNameFormat":"001_%03d.png",

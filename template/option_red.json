@@ -1,4 +1,6 @@
 {
+  "srcDir":"left",
+  "flipDir":"right",
   "generate":{
     "outDir":"tmp/{{ACTOR_NAME}}/generate/x{{WIDTH}}",
     "outFileNameFormat":"{{PATTERN_INDEX}}_%03d.png",

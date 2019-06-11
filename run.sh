@@ -25,7 +25,8 @@ for w in 144 96; do
   for v in $CONFIG_DIR/*.json; do
     i=$((i+1))
     pattern_index=$(printf "%03d" $i)
-    sed -i -e 's@{{ACTOR_NAME}}@'$ACTOR_NAME'@g' \
+    sed -i \
+      -e 's@{{ACTOR_NAME}}@'$ACTOR_NAME'@g' \
       -e 's@{{X}}@'$x'@g' \
       -e 's@{{Y}}@'$y'@g' \
       -e 's@{{WIDTH}}@'$w'@g' \
