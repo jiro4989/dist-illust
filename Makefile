@@ -4,6 +4,8 @@ SRCS := $(shell find script -type f | grep .sh)
 README := target/README.html
 STAND_IMAGES := $(shell find dist/ -name *r_stand_001_001.png)
 
+GEN_CMD := ./src/sh/generate_images.sh
+
 # リリース
 # ------------------------------------------------------------------------------
 
@@ -91,6 +93,10 @@ dist/actor027.zip: $(SRCS) \
 		Makefile \
 		$(README) 
 	./$(GEN_SCRIPT) -a actor027 -x 125 -y 215 --scale-mv 50 --scale-vxace 35 1>/dev/null
+
+.PHONY: actor027
+actor027:
+	ACTOR_NAME=actor027 X=125 Y=215 SCALE_SIZE=50 $(GEN_CMD)
 
 # 環境整備
 # ------------------------------------------------------------------------------

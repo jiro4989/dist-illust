@@ -2,14 +2,15 @@
 
 set -eu
 
-readonly ACTOR_NAME=actor027
-readonly CONFIG_DIR=config/$ACTOR_NAME
+## 環境変数
+## readonly ACTOR_NAME=actor027
+## readonly X=125
+## readonly Y=215
+## readonly SCALE_SIZE=50
 
-readonly X=125
-readonly Y=215
+readonly CONFIG_DIR=config/$ACTOR_NAME
 readonly BASE_WIDTH=144
 readonly BASE_HEIGHT=144
-readonly SCALE_SIZE=50
 
 rm -rf tmp/$ACTOR_NAME
 
@@ -34,6 +35,6 @@ for w in 144 96; do
       -e 's@{{SCALE_SIZE}}@'$scale_size'@g' \
       -e 's@{{PATTERN_INDEX}}@'"$pattern_index"'@g' \
       $v
-    imgctl all $v
+    imgctl all $v >/dev/null
   done
 done
