@@ -1,5 +1,6 @@
 README := target/README.html
 GEN_CMD := ./src/sh/generate_images.sh
+ARC_CMD := ./src/sh/archive.sh
 
 # リリース
 # ------------------------------------------------------------------------------
@@ -7,11 +8,15 @@ GEN_CMD := ./src/sh/generate_images.sh
 # 配布物zipを全部作成
 .PHONY: all
 all: \
+	clean \
+	actor001_019 \
 	actor020 \
 	actor021 \
 	actor022 \
 	actor023 \
 	actor024 \
+	actor025 \
+	actor026 \
 	actor027
 
 # GitHubReleaseにリリース
@@ -22,10 +27,9 @@ release: all
 # 配布物作成
 # ------------------------------------------------------------------------------
 
-.PHONY: dist/actor001_019.zip
-dist/actor001_019.zip:
-	#./script/gen_tmp_with_no_diff.sh -a actor001 -x 57 -y 100 --scale-size 65 --panel-type rpg_maker_mv
-	for i in `seq 19`; do ./script/zip_gened.sh actor`printf '%03d' $$i`; done 1>/dev/null
+.PHONY: actor001_019
+actor001_019:
+	for i in `seq 19`; do $(ARC_CMD) actor`printf '%03d' $$i`; done
 
 .PHONY: actor020
 actor020:
@@ -47,11 +51,11 @@ actor023:
 actor024:
 	ACTOR_NAME=$@ X=73 Y=215 SCALE_SIZE=44 $(GEN_CMD)
 
-dist/actor025.zip:
-	./script/zip_gened.sh actor`printf '%03d' 25` 1>/dev/null
+actor025:
+	$(ARC_CMD) $@
 
-dist/actor026.zip:
-	./script/zip_gened.sh actor`printf '%03d' 26` 1>/dev/null
+actor026:
+	$(ARC_CMD) $@
 
 .PHONY: actor027
 actor027:

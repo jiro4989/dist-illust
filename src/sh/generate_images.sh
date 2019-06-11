@@ -11,8 +11,10 @@ set -eu
 readonly CONFIG_DIR=config/$ACTOR_NAME
 readonly BASE_WIDTH=144
 readonly BASE_HEIGHT=144
+readonly TMP_DIR=tmp/$ACTOR_NAME
 
-rm -rf tmp/$ACTOR_NAME
+mkdir -p tmp/
+rm -rf $TMP_DIR || true
 
 for w in 144 96; do
   rm -rf $CONFIG_DIR
@@ -38,3 +40,11 @@ for w in 144 96; do
     imgctl all $v >/dev/null
   done
 done
+
+readonly ACTOR_DIR=$TMP_DIR/$ACTOR_NAME
+mkdir -p $ACTOR_DIR/stand
+cp -r $TMP_DIR/generate $ACTOR_DIR/stand/left
+cp -r $TMP_DIR/flip $ACTOR_DIR/stand/right
+cp -r $TMP_DIR/face $ACTOR_DIR/
+mv $ACTOR_DIR/face/{x144,rpg_maker_mv}
+mv $ACTOR_DIR/face/{x96,rpg_maker_vxace}
