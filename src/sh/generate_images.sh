@@ -54,5 +54,18 @@ mkdir -p $ACTOR_DIR/stand
 cp -r $TMP_DIR/generate $ACTOR_DIR/stand/left
 cp -r $TMP_DIR/flip $ACTOR_DIR/stand/right
 cp -r $TMP_DIR/face $ACTOR_DIR/
+
+# ファイル名をactorXXX_l_face_001_001.png 形式に変更する
+find $TMP_DIR -name '*.png' \
+  | grep -E 'actor.../actor.../face' \
+  | sed -E 's@(tmp)/(actor[0-9]+)/(actor[0-9]+)/(face)/([^/]+)/(.)([^/]+)/(.*\.png)@mv & \1/\2/\3/\4/\5/\6\7/\2_\6_\4_\8@ge' \
+  >/dev/null
+
+# ファイル名をactorXXX_l_stand_001_001.png 形式に変更する
+find $TMP_DIR -name '*.png' \
+  | grep -E 'actor.../actor.../stand' \
+  | sed -E 's@(tmp)/(actor[0-9]+)/(actor[0-9]+)/(stand)/(.)([^/]+)/(.*\.png)@mv & \1/\2/\3/\4/\5\6/\2_\5_\4_\7@ge' \
+  >/dev/null
+
 (cd $TMP_DIR && zip -r $ACTOR_NAME{.zip,}) >/dev/null
 mv $ACTOR_DIR.zip dist/
