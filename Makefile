@@ -48,9 +48,11 @@ actor023:
 actor024:
 	ACTOR_NAME=$@ X=73 Y=215 SCALE_SIZE=44 $(GEN_CMD)
 
+.PHONY: actor025
 actor025:
 	$(ARC_CMD) $@
 
+.PHONY: actor026
 actor026:
 	$(ARC_CMD) $@
 
@@ -65,8 +67,8 @@ actor027:
 # 依存ツールのDL
 .PHONY: setup
 setup:
-	go get -u github.com/jiro4989/imgctl
-	go get -u github.com/tcnksm/ghr
+	GO111MODULE=off go get -u github.com/jiro4989/imgctl
+	GO111MODULE=off go get -u github.com/tcnksm/ghr
 
 # 成果物や中間生成物の削除
 .PHONY: clean
@@ -77,7 +79,7 @@ clean:
 # kritaの不可視ファイルの削除
 .PHONY: clean-backupfiles
 clean-backupfiles:
-	find target/ -type f | grep png~ | xargs rm
+	find resources/ -name '*.png~' -exec rm {} \;
 
 # 画像サイズを確認する
 .PHONY: check-size
