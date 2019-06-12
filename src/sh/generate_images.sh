@@ -51,6 +51,7 @@ done
 
 readonly ACTOR_DIR=$TMP_DIR/$ACTOR_NAME
 mkdir -p $ACTOR_DIR/stand
+cp docs/LICENSE.html $ACTOR_DIR/
 cp -r $TMP_DIR/generate $ACTOR_DIR/stand/left
 cp -r $TMP_DIR/flip $ACTOR_DIR/stand/right
 cp -r $TMP_DIR/face $ACTOR_DIR/
