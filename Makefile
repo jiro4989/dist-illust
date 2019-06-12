@@ -84,4 +84,5 @@ clean-backupfiles:
 # 画像サイズを確認する
 .PHONY: check-size
 check-size:
+	find tmp/actor{001..019} -name '*.png' -exec identify -format '%f: width = %w, height = %h\n' {} \;
 	find tmp/actor*/actor* -name '*.png' -exec identify -format '%f: width = %w, height = %h\n' {} \;
