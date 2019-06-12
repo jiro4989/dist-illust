@@ -2,7 +2,7 @@
   "srcDir":"left",
   "flipDir":"right",
   "generate":{
-    "outDir":"tmp/actor024/generate/x96",
+    "outDir":"tmp/actor024/generate",
     "outFileNameFormat":"002_%03d.png",
     "srcPatterns":[
       [
@@ -169,21 +169,21 @@
     ]
   },
   "flip":{
-    "outDir":"tmp/actor024/flip/x96"
+    "outDir":"tmp/actor024/flip"
   },
   "scale":{
-    "outDir":"tmp/actor024/scale/x96",
+    "outDir":"tmp/actor024/scale/rpg_maker_vxace",
     "size":29
   },
   "crop":{
-    "outDir":"tmp/actor024/crop/x96",
+    "outDir":"tmp/actor024/crop/rpg_maker_vxace",
     "x":48,
     "y":143,
     "width":96,
     "height":96
   },
   "paste":{
-    "outDir":"tmp/actor024/face/x96",
+    "outDir":"tmp/actor024/face/rpg_maker_vxace",
     "outFileNameFormat":"002_%03d.png",
     "row":2,
     "col":4,

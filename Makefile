@@ -81,3 +81,7 @@ clean:
 clean-backupfiles:
 	find target/ -type f | grep png~ | xargs rm
 
+# 画像サイズを確認する
+.PHONY: check-size
+check-size:
+	find tmp/actor*/actor* -name '*.png' -exec identify -format '%f: width = %w, height = %h\n' {} \;
