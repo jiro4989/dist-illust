@@ -6,33 +6,35 @@
 
 画像の生成、管理のコストを抑えること。主に自分用。
 
-今まで画像はDropboxやGoogleDriveで管理していたのですが、正直使い勝手悪いですしリ
-リースもやりづらいですしバージョン管理もしづらいので、ソースファイルと差分画像だ
-けGitHubで管理して、生成はmakeからやればよいのではと考えました。
+## できること
+
+`resources`配下の差分画像を順に重ねていくことで、
+立ち絵画像を自動生成し配布用のファイル構成にパッケージングすること。
+
+昔に書いたイラストはすでに元になる画像ソースが残っていないことや
+ソースの画像のサイズが小さかったりして自動生成に使えないものがある。
+自動生成できないもの(001〜019と025, 026)はすでに配布用に生成済みのもののみをリポジトリで管理している。
+
+## 前提条件
+
+以下のツールが必要である。
+
+- [imgctl](https://github.com/jiro4989/imgctl) 自作の画像生成用のツール
+- zip 配布用にzip圧縮するためのコマンド
+- ghr GitHubReleaseにリリースするためのコマンド
 
 ## 使い方
 
-- 初回セットアップ: `make setup`
-- 生成 `make dist/actorXXX.zip`
-- 全部一気に生成 `make all`
+- 依存ツールのインストール: `make setup`
+- 生成 `make actorXXX`
+- 全部生成 `make all`
 - GitHubReleaseにリリース `make release`
-- ディレクトリ作成 `make dir DIRNAME=actorXXX`
 
 ## 成果物
 
-下記のファイル構造のzipファイル。
+distディレクトリ配下に圧縮ファイルが生成される。
 
-    dist/actorXXX/
-    |-- face
-    |   |-- rpg_maker_mv
-    |   |   |-- left
-    |   |   `-- right
-    |   `-- rpg_maker_vxace
-    |       |-- left
-    |       `-- right
-    `-- stand
-        |-- left
-        `-- right
+# メモ
 
 ## Krita設定
 
