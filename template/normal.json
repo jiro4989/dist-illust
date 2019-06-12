@@ -2,7 +2,7 @@
   "srcDir":"left",
   "flipDir":"right",
   "generate":{
-    "outDir":"tmp/{{ACTOR_NAME}}/generate/x{{WIDTH}}",
+    "outDir":"tmp/{{ACTOR_NAME}}/generate",
     "outFileNameFormat":"{{PATTERN_INDEX}}_%03d.png",
     "srcPatterns":[
       [
@@ -146,21 +146,21 @@
     ]
   },
   "flip":{
-    "outDir":"tmp/{{ACTOR_NAME}}/flip/x{{WIDTH}}"
+    "outDir":"tmp/{{ACTOR_NAME}}/flip"
   },
   "scale":{
-    "outDir":"tmp/{{ACTOR_NAME}}/scale/x{{WIDTH}}",
+    "outDir":"tmp/{{ACTOR_NAME}}/scale/{{VERSION}}",
     "size":{{SCALE_SIZE}}
   },
   "crop":{
-    "outDir":"tmp/{{ACTOR_NAME}}/crop/x{{WIDTH}}",
+    "outDir":"tmp/{{ACTOR_NAME}}/crop/{{VERSION}}",
     "x":{{X}},
     "y":{{Y}},
     "width":{{WIDTH}},
     "height":{{HEIGHT}}
   },
   "paste":{
-    "outDir":"tmp/{{ACTOR_NAME}}/face/x{{WIDTH}}",
+    "outDir":"tmp/{{ACTOR_NAME}}/face/{{VERSION}}",
     "outFileNameFormat":"{{PATTERN_INDEX}}_%03d.png",
     "row":2,
     "col":4,

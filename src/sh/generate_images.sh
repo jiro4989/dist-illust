@@ -13,6 +13,12 @@ readonly BASE_WIDTH=144
 readonly BASE_HEIGHT=144
 readonly TMP_DIR=tmp/$ACTOR_NAME
 
+declare -A VERSION_MAP
+VERSION_MAP=(
+  ["96"]=rpg_maker_vxace
+  ["144"]=rpg_maker_mv
+)
+
 mkdir -p tmp/
 rm -rf $TMP_DIR || true
 
@@ -25,6 +31,7 @@ for w in 144 96; do
   scale_size=$((SCALE_SIZE*w/BASE_WIDTH))
   x=$((X*w/BASE_WIDTH))
   y=$((Y*w/BASE_WIDTH))
+  version=${VERSION_MAP[$w]}
   for v in $CONFIG_DIR/*.json; do
     i=$((i+1))
     pattern_index=$(printf "%03d" $i)
@@ -36,6 +43,7 @@ for w in 144 96; do
       -e 's@{{HEIGHT}}@'$w'@g' \
       -e 's@{{SCALE_SIZE}}@'$scale_size'@g' \
       -e 's@{{PATTERN_INDEX}}@'"$pattern_index"'@g' \
+      -e 's@{{VERSION}}@'"$version"'@g' \
       $v
     imgctl all $v >/dev/null
   done
@@ -46,5 +54,5 @@ mkdir -p $ACTOR_DIR/stand
 cp -r $TMP_DIR/generate $ACTOR_DIR/stand/left
 cp -r $TMP_DIR/flip $ACTOR_DIR/stand/right
 cp -r $TMP_DIR/face $ACTOR_DIR/
-mv $ACTOR_DIR/face/{x144,rpg_maker_mv}
-mv $ACTOR_DIR/face/{x96,rpg_maker_vxace}
+(cd $TMP_DIR && zip -r $ACTOR_NAME{.zip,}) >/dev/null
+mv $ACTOR_DIR.zip dist/
