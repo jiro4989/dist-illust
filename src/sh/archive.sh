@@ -14,7 +14,7 @@
 ##   なし
 ##
 ## 使い方:
-##   archive.sh actor001
+##   ./src/sh/archive.sh actor001
 ##
 ## 成果物:
 ##   dist/actorXXX.zip

@@ -23,7 +23,7 @@
 ##   - SCALE_SIZE  トリミングするときのスケールサイズ
 ##
 ## 使い方:
-##   ACTOR_NAME=actor027 X=125 Y=215 SCALE_SIZE=50 generate_images.sh
+##   ACTOR_NAME=actor027 X=125 Y=215 SCALE_SIZE=50 ./src/sh/generate_images.sh
 ##
 ## 成果物:
 ##   dist/actorXXX.zip
