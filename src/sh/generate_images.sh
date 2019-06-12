@@ -1,18 +1,52 @@
 #!/bin/bash
 
+################################################################################
+##
+## generate_images.sh は差分の画像を重ねて立ち絵の画像を生成する。
+## 生成した画像を左右反転、トリミング、タイル状配置してZIP圧縮し、distディレクト
+## リに配置する。
+##
+## 前提条件:
+##   imgctl 自作のコマンド (https://github.com/jiro4989/imgctl)
+##   zip    ZIP圧縮に必要
+##
+## 引数:
+##   - resources/actorXXXのactorXXX
+##
+## 環境変数:
+##   オプション引数解析を実装するのがめんどくさかったので環境変数を使うことにし
+##   ている。
+##
+##   - ACTOR_NAME  resources/actorXXXのactorXXX
+##   - X           トリミング位置
+##   - Y           トリミング位置
+##   - SCALE_SIZE  トリミングするときのスケールサイズ
+##
+## 使い方:
+##   ACTOR_NAME=actor027 X=125 Y=215 SCALE_SIZE=50 generate_images.sh
+##
+## 成果物:
+##   dist/actorXXX.zip
+##
+## 中間生成物:
+##   tmp/actorXXX/
+##
+################################################################################
+
 set -eu
 
-## 環境変数
-## readonly ACTOR_NAME=actor027
-## readonly X=125
-## readonly Y=215
-## readonly SCALE_SIZE=50
+# 環境変数がセットされているかをチェック
+: $ACTOR_NAME
+: $X
+: $Y
+: $SCALE_SIZE
 
 readonly CONFIG_DIR=config/$ACTOR_NAME
 readonly BASE_WIDTH=144
 readonly BASE_HEIGHT=144
 readonly TMP_DIR=tmp/$ACTOR_NAME
 
+# ハッシュマップの宣言
 declare -A VERSION_MAP
 VERSION_MAP=(
   ["96"]=rpg_maker_vxace
@@ -22,9 +56,14 @@ VERSION_MAP=(
 mkdir -p tmp/
 rm -rf $TMP_DIR || true
 
+# テンプレートの設定ファイルをconfigディレクトリにコピーして
+# 置換用のテンプレート文字列を環境変数や変数で上書き置換。
+#
+# 置換後の設定ファイルを使用してimgctl allで画像を一括生成する。
 for w in 144 96; do
   rm -rf $CONFIG_DIR
   mkdir $CONFIG_DIR
+  # テンプレート設定ファイルの配置
   cp template/* $CONFIG_DIR/
 
   i=0
@@ -35,6 +74,8 @@ for w in 144 96; do
   for v in $CONFIG_DIR/*.json; do
     i=$((i+1))
     pattern_index=$(printf "%03d" $i)
+
+    # 環境変数や変数でテンプレート文字列を上書き置換
     sed -i \
       -e 's@{{ACTOR_NAME}}@'$ACTOR_NAME'@g' \
       -e 's@{{X}}@'$x'@g' \
@@ -49,6 +90,7 @@ for w in 144 96; do
   done
 done
 
+# 配布用のディレクトリ構成に変更
 readonly ACTOR_DIR=$TMP_DIR/$ACTOR_NAME
 mkdir -p $ACTOR_DIR/stand
 cp docs/LICENSE.html $ACTOR_DIR/
