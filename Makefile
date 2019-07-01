@@ -9,15 +9,10 @@ ARC_CMD := ./src/sh/archive.sh
 .PHONY: all
 all: \
 	clean \
-	actor001_019 \
-	actor020 \
-	actor021 \
-	actor022 \
-	actor023 \
-	actor024 \
-	actor025 \
-	actor026 \
-	actor027
+	actor001_019
+	for task in `ls resources/ | sed 's/actor//g' | awk '20<=$$1'`; do \
+		make actor$$task; \
+	done
 
 # GitHubReleaseにリリース
 .PHONY: release
