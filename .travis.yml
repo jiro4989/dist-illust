@@ -1,0 +1,28 @@
+language: go
+
+os:
+  - linux
+
+env:
+  global:
+    - GO111MODULE=off
+
+addons:
+  apt:
+    packages:
+      - zip
+
+before_script:
+  - go get github.com/jiro4989/imgctl
+
+script:
+  - make all
+
+deploy:
+  provider: releases
+  api_key: "$GITHUB_OAUTH_TOKEN"
+  keep-history: false
+  skip_cleanup: true
+  file: dist/*.zip
+  on:
+    tags: true
