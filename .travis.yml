@@ -23,6 +23,7 @@ deploy:
   api_key: "$GITHUB_OAUTH_TOKEN"
   keep-history: false
   skip_cleanup: true
-  file: dist/*.zip
+  file_glob: true
+  file: 'dist/*.zip'
   on:
     tags: true
