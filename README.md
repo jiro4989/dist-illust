@@ -32,6 +32,13 @@
 - 全部生成 `make all`
 - GitHubReleaseにリリース `make release`
 
+## リリース作業
+
+- resourcesに差分画像を配置
+- Makefileにresourcesのフォルダ名と同じタスクを作成
+- GitHubの画面から新しくタグを追加
+- TravisCIのデプロイタスクが走って自動でデプロイされる
+
 ## 成果物
 
 distディレクトリ配下に圧縮ファイルが生成される。
