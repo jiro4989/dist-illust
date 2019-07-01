@@ -1,5 +1,7 @@
 # dist-illust
 
+[![Build Status](https://travis-ci.org/jiro4989/dist-illust.svg?branch=master)](https://travis-ci.org/jiro4989/dist-illust)
+
 画像の一括生成、管理用リポジトリ。
 
 ## 目的
