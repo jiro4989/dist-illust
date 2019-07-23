@@ -1,6 +1,0 @@
-dist/*.zip
-/tmp/
-*.png~
-*.kra~
-*.kra-autosave.kra
-gh-pages/*.png
