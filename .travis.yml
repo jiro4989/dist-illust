@@ -13,7 +13,7 @@ addons:
       - zip
 
 install:
-  - go get github.com/jiro4989/imgctl
+  - make setup
 
 script:
   - make all

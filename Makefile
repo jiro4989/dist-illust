@@ -14,11 +14,6 @@ all: \
 		make actor$$task; \
 	done
 
-# GitHubReleaseにリリース
-.PHONY: release
-release: all
-	ghr `date +%Y%m%d-%H%M%S` dist/
-
 .PHONY: actor001_019
 actor001_019:
 	for i in `seq 19`; do $(ARC_CMD) actor`printf '%03d' $$i`; done
@@ -63,7 +58,6 @@ actor027:
 .PHONY: setup
 setup:
 	GO111MODULE=off go get -u github.com/jiro4989/imgctl
-	GO111MODULE=off go get -u github.com/tcnksm/ghr
 
 # 成果物や中間生成物の削除
 .PHONY: clean
