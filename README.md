@@ -23,25 +23,20 @@
 
 - [imgctl](https://github.com/jiro4989/imgctl) 自作の画像生成用のツール
 - zip 配布用にzip圧縮するためのコマンド
-- ghr GitHubReleaseにリリースするためのコマンド
 
 ## 使い方
 
 - 依存ツールのインストール: `make setup`
 - 生成 `make actorXXX`
 - 全部生成 `make all`
-- GitHubReleaseにリリース `make release`
 
 ## リリース作業
 
 - resourcesに差分画像を配置
 - Makefileにresourcesのフォルダ名と同じタスクを作成
+- git push
 - GitHubの画面から新しくタグを追加
 - TravisCIのデプロイタスクが走って自動でデプロイされる
-
-## 成果物
-
-distディレクトリ配下に圧縮ファイルが生成される。
 
 ## アクター一覧
 
@@ -56,14 +51,3 @@ distディレクトリ配下に圧縮ファイルが生成される。
 ### Actor021〜Actor030
 
 ![Actor021〜Actor030](https://jiro4989.github.io/dist-illust/thumbnail_003.png)
-
-# メモ
-
-## Krita設定
-
-| 設定       | 値          |
-|------------|-------------|
-| ペン       | lnk_gpen_25 |
-| ペンサイズ | 10          |
-| 画像サイズ | N x 1620 px |
-
