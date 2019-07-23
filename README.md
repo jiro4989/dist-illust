@@ -43,6 +43,20 @@
 
 distディレクトリ配下に圧縮ファイルが生成される。
 
+## アクター一覧
+
+### Actor001〜Actor010
+
+![Actor001〜Actor010](https://jiro4989.github.io/dist-illust/thumbnail_001.png)
+
+### Actor011〜Actor020
+
+![Actor011〜Actor020](https://jiro4989.github.io/dist-illust/thumbnail_002.png)
+
+### Actor021〜Actor030
+
+![Actor021〜Actor030](https://jiro4989.github.io/dist-illust/thumbnail_003.png)
+
 # メモ
 
 ## Krita設定

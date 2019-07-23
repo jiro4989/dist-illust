@@ -1,18 +1,26 @@
 GEN_CMD := ./src/sh/generate_images.sh
 ARC_CMD := ./src/sh/archive.sh
+THUMBNAIL_CMD := ./src/sh/generate_thumbnail.sh
 
 ################################################################################
 #     画像・配布物生成
 ################################################################################
 
-# 配布物zipを全部作成
 .PHONY: all
-all: \
+all: thumbnail
+
+# 配布物zipを全部作成
+.PHONY: actors
+actors: \
 	clean \
 	actor001_019
 	for task in `ls resources/ | sed 's/actor//g' | awk '20<=$$1'`; do \
 		make actor$$task; \
 	done
+
+.PHONY: thumbnail
+thumbnail: actors
+	$(THUMBNAIL_CMD)
 
 .PHONY: actor001_019
 actor001_019:
