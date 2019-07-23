@@ -41,6 +41,17 @@ set -eu
 : $Y
 : $SCALE_SIZE
 
+# コマンドの有無チェック
+type imgctl >/dev/null 2>&1 || {
+  echo -e "imgctlコマンドが存在しません。\nmake setup を実行してください。"
+  exit 1
+}
+
+type zip >/dev/null 2>&1 || {
+  echo -e "zipコマンドが存在しません。インストールしてください。"
+  exit 1
+}
+
 readonly CONFIG_DIR=config/$ACTOR_NAME
 readonly BASE_WIDTH=144
 readonly BASE_HEIGHT=144

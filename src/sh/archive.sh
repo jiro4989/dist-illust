@@ -29,6 +29,12 @@ set -eu
 # 引数が指定されているかをチェック
 : $1
 
+# コマンドの有無チェック
+type zip >/dev/null 2>&1 || {
+  echo -e "zipコマンドが存在しません。インストールしてください。"
+  exit 1
+}
+
 readonly ACTOR_NAME=$1
 
 mkdir -p tmp/
