@@ -19,7 +19,7 @@ actors: \
 	done
 
 .PHONY: thumbnail
-thumbnail: acotrs
+thumbnail: actors
 	$(THUMBNAIL_CMD)
 
 .PHONY: actor001_019
