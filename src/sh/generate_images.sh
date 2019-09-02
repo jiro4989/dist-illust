@@ -122,4 +122,5 @@ find $TMP_DIR -name '*.png' \
   >/dev/null
 
 (cd $TMP_DIR && zip -r $ACTOR_NAME{.zip,}) >/dev/null
+mkdir -p dist
 mv $ACTOR_DIR.zip dist/

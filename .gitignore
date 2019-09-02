@@ -1,4 +1,4 @@
-dist/*.zip
+/dist/
 /tmp/
 *.png~
 *.kra~

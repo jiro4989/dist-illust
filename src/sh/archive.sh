@@ -44,4 +44,5 @@ cp docs/LICENSE.html tmp/$ACTOR_NAME/
 
 ( cd tmp && zip -r $ACTOR_NAME{.zip,} ) >/dev/null
 
+mkdir -p dist
 mv tmp/$ACTOR_NAME.zip dist/
