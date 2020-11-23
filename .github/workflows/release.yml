@@ -16,7 +16,7 @@ jobs:
       - name: Setup
         run: make setup
       - name: Build
-        run: make all
+        run: make
       - name: Upload binaries to release
         uses: svenstaro/upload-release-action@v2
         with:
@@ -25,3 +25,8 @@ jobs:
           tag: ${{ github.ref }}
           overwrite: true
           file_glob: true
+      - name: Update gh-pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: 'gh-pages'
