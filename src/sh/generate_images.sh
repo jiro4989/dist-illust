@@ -61,7 +61,7 @@ readonly TMP_DIR=tmp/$ACTOR_NAME
 declare -A VERSION_MAP
 VERSION_MAP=(
   ["96"]=rpg_maker_vxace
-  ["144"]=rpg_maker_mv
+  ["144"]=rpg_maker_mv_mz
 )
 
 mkdir -p tmp/
