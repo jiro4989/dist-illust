@@ -42,12 +42,12 @@ set -eu
 : $SCALE_SIZE
 
 # コマンドの有無チェック
-type imgctl >/dev/null 2>&1 || {
+type imgctl > /dev/null 2>&1 || {
   echo -e "imgctlコマンドが存在しません。\nmake setup を実行してください。"
   exit 1
 }
 
-type zip >/dev/null 2>&1 || {
+type zip > /dev/null 2>&1 || {
   echo -e "zipコマンドが存在しません。インストールしてください。"
   exit 1
 }
@@ -61,7 +61,7 @@ readonly TMP_DIR=tmp/$ACTOR_NAME
 declare -A VERSION_MAP
 VERSION_MAP=(
   ["96"]=rpg_maker_vxace
-  ["144"]=rpg_maker_mv
+  ["144"]=rpg_maker_mv_mz
 )
 
 mkdir -p tmp/
@@ -78,12 +78,12 @@ for w in 144 96; do
   cp template/* $CONFIG_DIR/
 
   i=0
-  scale_size=$((SCALE_SIZE*w/BASE_WIDTH))
-  x=$((X*w/BASE_WIDTH))
-  y=$((Y*w/BASE_WIDTH))
+  scale_size=$((SCALE_SIZE * w / BASE_WIDTH))
+  x=$((X * w / BASE_WIDTH))
+  y=$((Y * w / BASE_WIDTH))
   version=${VERSION_MAP[$w]}
   for v in $CONFIG_DIR/*.json; do
-    i=$((i+1))
+    i=$((i + 1))
     pattern_index=$(printf "%03d" $i)
 
     # 環境変数や変数でテンプレート文字列を上書き置換
@@ -97,7 +97,7 @@ for w in 144 96; do
       -e 's@{{PATTERN_INDEX}}@'"$pattern_index"'@g' \
       -e 's@{{VERSION}}@'"$version"'@g' \
       $v
-    imgctl all $v >/dev/null
+    imgctl all $v > /dev/null
   done
 done
 
@@ -110,17 +110,17 @@ cp -r $TMP_DIR/flip $ACTOR_DIR/stand/right
 cp -r $TMP_DIR/face $ACTOR_DIR/
 
 # ファイル名をactorXXX_l_face_001_001.png 形式に変更する
-find $TMP_DIR -name '*.png' \
-  | grep -E 'actor.../actor.../face' \
-  | sed -E 's@(tmp)/(actor[0-9]+)/(actor[0-9]+)/(face)/([^/]+)/(.)([^/]+)/(.*\.png)@mv & \1/\2/\3/\4/\5/\6\7/\2_\6_\4_\8@ge' \
-  >/dev/null
+find $TMP_DIR -name '*.png' |
+  grep -E 'actor.../actor.../face' |
+  sed -E 's@(tmp)/(actor[0-9]+)/(actor[0-9]+)/(face)/([^/]+)/(.)([^/]+)/(.*\.png)@mv & \1/\2/\3/\4/\5/\6\7/\2_\6_\4_\8@ge' \
+    > /dev/null
 
 # ファイル名をactorXXX_l_stand_001_001.png 形式に変更する
-find $TMP_DIR -name '*.png' \
-  | grep -E 'actor.../actor.../stand' \
-  | sed -E 's@(tmp)/(actor[0-9]+)/(actor[0-9]+)/(stand)/(.)([^/]+)/(.*\.png)@mv & \1/\2/\3/\4/\5\6/\2_\5_\4_\7@ge' \
-  >/dev/null
+find $TMP_DIR -name '*.png' |
+  grep -E 'actor.../actor.../stand' |
+  sed -E 's@(tmp)/(actor[0-9]+)/(actor[0-9]+)/(stand)/(.)([^/]+)/(.*\.png)@mv & \1/\2/\3/\4/\5\6/\2_\5_\4_\7@ge' \
+    > /dev/null
 
-(cd $TMP_DIR && zip -r $ACTOR_NAME{.zip,}) >/dev/null
+(cd $TMP_DIR && zip -r $ACTOR_NAME{.zip,}) > /dev/null
 mkdir -p dist
 mv $ACTOR_DIR.zip dist/
