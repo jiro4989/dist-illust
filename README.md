@@ -36,7 +36,7 @@
 - Makefileにresourcesのフォルダ名と同じタスクを作成
 - git push
 - GitHubの画面から新しくタグを追加
-- TravisCIのデプロイタスクが走って自動でデプロイされる
+- GitHub Actionsのデプロイタスクが走って自動でデプロイされる
 
 ## アクター一覧
 
