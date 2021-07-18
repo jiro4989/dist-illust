@@ -154,8 +154,8 @@
   },
   "crop":{
     "outDir":"tmp/actor030/crop/rpg_maker_vxace",
-    "x":190,
-    "y":53,
+    "x":185,
+    "y":50,
     "width":96,
     "height":96
   },

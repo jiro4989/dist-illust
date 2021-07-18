@@ -68,7 +68,7 @@ actor029:
 
 .PHONY: actor030
 actor030:
-	ACTOR_NAME=$@ X=285 Y=80 SCALE_SIZE=29 $(GEN_CMD)
+	ACTOR_NAME=$@ X=278 Y=75 SCALE_SIZE=29 $(GEN_CMD)
 
 ################################################################################
 #     環境整備
